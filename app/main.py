@@ -8,7 +8,7 @@ def main():
     server_socket = socket.create_server(("localhost", 4221), reuse_port=True)
     server_socket.listen(0)
     client_socket, client_address = server_socket.accept()
-    client_socket.sendall(b"HTTP/1.1 200 OK /r/n/r/n")
+    client_socket.sendall(b"HTTP/1.1 200 OK \r\n\r\n")
     client_socket.close()
     server_socket.accept() # wait for client
 
